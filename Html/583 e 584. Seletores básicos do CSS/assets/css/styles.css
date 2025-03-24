@@ -10,7 +10,7 @@
 body div section p,
 body div section h1{
     color: red;
-}*/
+}
 
 .color-red{
     color: red;
@@ -28,4 +28,21 @@ div{
 
 .pai > .filha > span > .filha{
     color: red ;
+}
+
+.pai .um + .dois{
+    color: red;
+}*/
+
+.pai .um~.dois{
+    color: red;
+}
+
+[meu-atributo="valor"]{
+    color: red;
+}
+
+[checked]{
+    width: 50px;
+    height: 50px;
 }
