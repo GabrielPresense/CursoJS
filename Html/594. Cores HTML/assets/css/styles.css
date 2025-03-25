@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    
+    padding: 15px;
+}
+
+.grid::after{
+    content: '';
+    display: block;
+    clear: both;/* both serve para limpar dos dois lados, left e right */
+}
+
+.grid .col{
+    width: 33.33%;
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+
+.grid .col-content {
+    width: 100%;
+    height: 100%;
+    /*Formas de adicionar cor
+    background: rgba(0,0,0,0.70);
+    background: #FFFFFF; Hexadecimal ABCDEF123456789
+    background: rgba(0,0,0,0.70); /*Hexadecimal ABCDEF123456789
+    background: hsla(0, 100%, 50%, 1%);*/
+    background: darkturquoise;
+}
