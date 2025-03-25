@@ -1,0 +1,18 @@
+p {
+    font-size: 20px; /*Tamanho da fonte*/
+    font-style: italic; /*Estilo da fonte*/
+    font-weight: bold; /*Estilo da fonte tambem*/
+    direction: ltr; /*Direção do texto | ltr da esquerda p/ direira e rtl da direita para esquerda*/
+    letter-spacing: 1px; /*Espaçamento entre as letas*/
+    word-spacing: 5px; /*Espaçamento entre as palavras*/
+    line-height: 25px; /*Altura da linha*/
+    text-align: left; /*Alinhamento do texto | center = centro, 
+                                               left = esquerda, 
+                                               right = direita*/
+    /* text-decoration: underline; overline Deixa uma linha acima do texto, 
+                                   line-through deixa riscado no meio da palavra,
+                                   underline deixa a linha a baixo da palavra.
+    text-indent: 50px; Identação dos paragrafos*/
+    text-shadow: -1px -1px 1px red; /*Sombreamento*/
+    text-transform: capitalize; /*lowercase = tudo minusculo, uppercase = tudo maiusculo e capitalize = primeira letra de todo o texto em maiusculo*/
+}
