@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+}
+
+ul {
+    height: 100px;
+    overflow-y: auto;
+}
+
+ul li.sticky {
+    position: sticky;
+    background: gray;
+    top: 0;
+}
+
+
+/*.pai {
+    height: 300vh;
+}
+
+.filha1, .filha2, .filha3 {
+    width: 300px;
+    height: 300px;
+    background: red;
+    margin: 10px;
+    position: static; não faz nada, não habilita nenhuma das opções
+}
+
+.filha2 {
+    background: greenyellow;
+    position: fixed; elemento é fixado independente da rolagem da pág
+    top: 30%;
+    right: 0;
+    z-index: 1;
+    /* z-index: 1;Define o posicionamento dos elementos, quanto menor mais a frente vai estar e quanto maior mas para tras dos elementos vai ficar
+} 
+
+.filha1 {
+}
+
+.filha3 {
+    background: blue;
+    position: relative; 
+    top: 100px;
+    left: 100px;
+}
+
+.outra {
+    position: absolute; posição absoluta em relação ao elemento ou pág
+    font-size: 50px;
+    background: #FFF;
+    right: 0;
+    bottom: 0;
+}*/
+
