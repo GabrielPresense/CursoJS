@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Atalhos para produtividade no Vs Code, Clique aqui ➜ <a href="https://docs.emmet.io/cheat-sheet/">Emmet Documentation</a></h1>
+    
+    </div>
+    <!-- Div com classes = div.nome da classe 1.nome da classe 2 -->
+    <div class="classe-um classe-dois">E eu posso colocar o conteúdo</div>
+    <!-- Div com Id = div#nome do Id -->
+    <div id="meu-id"></div>
+    <!-- Div com Id e classe = div#nome do Id.nome da classe, posso criar com mais classes é só ir adicionando conforme necessário -->
+    <div id="meu-id" class="minha-classe outra-classe">e posso digitar</div>
+    <!-- Div com Id e classe e texto no conteúdo = div#meu-id.minha-classe.minha-outra-classe{Eu posso já colocar o conteúdo} -->
+     <div id="meu-id" class="minha-classe minha-outra-classe">Eu posso já colocar o conteúdo</div>
+    <!-- Criar várias div com id e classes = div#meu-id-$.minha-classe.minha-outra-classe{O conteúdo $}*3 -->
+     <div id="meu-id-1" class="minha-classe minha-outra-classe">O conteúdo 1</div>
+     <div id="meu-id-2" class="minha-classe minha-outra-classe">O conteúdo 2</div>
+     <div id="meu-id-3" class="minha-classe minha-outra-classe">O conteúdo 3</div>
+     <!-- Tags com filhos = ul>li{Conteúdo $}*10 -->
+     <ul>
+        <li>Conteúdo 1</li>
+        <li>Conteúdo 2</li>
+        <li>Conteúdo 3</li>
+        <li>Conteúdo 4</li>
+        <li>Conteúdo 5</li>
+        <li>Conteúdo 6</li>
+        <li>Conteúdo 7</li>
+        <li>Conteúdo 8</li>
+        <li>Conteúdo 9</li>
+        <li>Conteúdo 10</li>
+      </ul>
+     <!-- Grupos = ul>(li>a{Conteúdo $})*3 -->
+     <ul>
+        <li><a href="">Conteúdo 1</a></li>
+        <li><a href="">Conteúdo 2</a></li>
+        <li><a href="">Conteúdo 3</a></li>
+     </ul>
+     <!-- Adicionar o link do href junto = ul>(li>a{Conteúdo $}[href="http://link.com/conteudo-$"])*2 -->
+     <ul>
+        <li><a href="http://link.com/conteudo-1">Conteúdo 1</a></li>
+        <li><a href="http://link.com/conteudo-2">Conteúdo 2</a></li>
+     </ul>
+     <!-- Tags personalizadas = div#home.minha-classe>h1{Conteúdo qualquer}+(p{Com qualquer conteúdo}>a{Clique aqui}[href="#home"]+{Clique aqui para saber mais})*2 -->
+     <div id="home" class="minha-classe">
+        <h1>Conteúdo qualquer</h1>
+        <p>Com qualquer conteúdo<a href="#home">Clique aqui</a>Clique aqui para saber mais</p>
+        <p>Com qualquer conteúdo<a href="#home">Clique aqui</a>Clique aqui para saber mais</p>
+     </div>
+     <!-- section>h1+div>(p>span)*3 -->
+      <section>
+        <h1></h1>
+        <div>
+            <p><span></span></p>
+            <p><span></span></p>
+            <p><span></span></p>
+        </div>
+      </section>
+
+      <style>
+        body {
+            /*
+            w100 = width: 100px;
+            w100% = width: 100%;
+            h100vh = height: 100vh;
+            m10r = margin: 10rem;
+            p10% = padding: 10%;
+            df = display: flex;
+            dg = display: grid;
+            dn = display: none;
+            db = display: block;
+            bg = background: #000;
+            bgc = background-color: #fff;
+            bgi = background-image: url();
+            posa = position: absolute;
+            t10r = top: 10rem;
+            b10r = bottom: 10rem;
+            r10r = right: 10rem;
+            l10r = left: 10rem;
+            */
+            margin: 0;
+        }
+      </style>
+    </body>
+</html>
