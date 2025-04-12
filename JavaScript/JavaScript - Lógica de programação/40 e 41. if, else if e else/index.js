@@ -93,7 +93,7 @@
  console.log('...Aqui vai o resto do código');
 
  const numero6 = 7;
-
+// Se eu precisar testar uma condição antes eu coloco por fora para nao prejudicar o fluxo do código
  if (numero6 <= 10) { // Verdadeira
    console.log('O número é menor ou igual a 10');
  }
