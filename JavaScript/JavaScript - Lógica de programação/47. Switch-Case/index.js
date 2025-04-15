@@ -29,7 +29,7 @@ default:
     break; //como essa seria a última condição não é obrigatório o break.
 }
 
-/*
+/* Exemplo utilizando function
 function getDiaSemanaTexto (diaSemana) {
     let diaSemanaTexto;
     switch (diaSemana) {
@@ -67,7 +67,7 @@ const diaSemanaTexto = getDiaSemanaTexto(diaSemana);
 console.log(diaSemana, diaSemanaTexto);
 */
 
-/*Poderia utilizar assim tambem
+/*Poderia utilizar assim tambem com if else
 if (diaSemana === 0) {
     diaSemanaTexto = 'Domingo';
 } else if (diaSemana === 1) {
