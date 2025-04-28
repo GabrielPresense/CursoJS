@@ -1,7 +1,16 @@
-// Escreva uma função chamada ePaisagem que recebe dois argumentos, largura e altura de uma
-// imagem (number).
-// Retorne true se a imagem estiver no modo paisagem.
+/* Código padrão
+function max(x, y) {
+    if (x < y) {
+        return x;
+    } else {
+        return y;
+    }
+}
 
-const ePaisagem = (largura, altura) => largura > altura;
+console.log(max(1,2));
+*/
 
-console.log(ePaisagem(1080, 1920));
+//Código refatorado
+const max = (x, y) => x > y ? x : y;
+
+console.log(max(10, 20));
