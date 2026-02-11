@@ -1,0 +1,168 @@
+<!--
+
+    ESTUDOS: SEMÂNTICA NA ESTRUTURA DO HTML5
+
+        ANTES DO HTML5:
+            Estruturavam a página só com div (e até tabelas) — sem semântica. Ex.: div.menu, div.content, div.footer.
+
+        HTML5:
+            Criou tags específicas de separação de conteúdo para usar com semântica.
+
+        TAGS DE SEPARAÇÃO:
+            address, article, aside, footer, header, main, nav, section. Cada uma com papel definido.
+
+        MAIN:
+            Conteúdo principal da página. Apenas um por página. Não pode ser filho de article, section, etc.
+
+        VALIDAÇÃO:
+            article e section devem ter um heading (h1–h6); caso contrário o validador emite aviso.
+
+        FOOTER / HEADER:
+            Podem se repetir (footer do article, do aside, da section). Relacionam-se ao ancestral de seção mais próximo.
+
+        SECTION vs DIV:
+            Quando não existe elemento semântico para aquela parte do site, use section (ou div). Section é mais moderno/semântico.
+
+        ACESSIBILIDADE:
+            Leitores de tela (ex.: Chrome Vox) usam a semântica para anunciar "banner", "navegação", "artigo", "seção", etc.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos HTML - Semântica na estrutura do HTML5</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #2c3e50;
+        }
+        h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; color: #2980b9; }
+        h2 { margin-top: 30px; color: #2c3e50; background: #ecf0f1; padding: 5px 10px; border-radius: 5px; }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            color: #e83e8c;
+            border: 1px solid #dee2e6;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        .sub-lista { margin-left: 20px; border-left: 2px dashed #bdc3c7; padding-left: 15px; margin-top: 10px; }
+        .dica { background: #fff3cd; padding: 10px; border-left: 5px solid #ffc107; margin-top: 20px; }
+        .btn-voltar {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .btn-voltar:hover { background: #219a52; }
+        pre { background: #f8f9fa; padding: 12px; border-radius: 6px; overflow-x: auto; font-size: 0.9rem; border: 1px solid #dee2e6; }
+    </style>
+</head>
+<body>
+
+    <a href=". index.html">
+        <button type="button" class="btn-voltar">O que foi feito</button>
+    </a>
+
+    <h1>Semântica na estrutura do HTML5</h1>
+
+    <h2>Antes do HTML5</h2>
+    <p>Antigamente a estrutura da página era feita só com <b>div</b> (e em épocas ainda mais antigas, até com <b>tabelas</b>) — sem semântica. Ex.: <code>div.menu</code>, <code>div.content</code>, <code>div.footer</code>. Com a chegada do <b>HTML5</b>, foram criadas tags específicas para você dar <b>significado</b> a cada parte do documento. Por isso o curso foca tanto em semântica: já existem tags para cada tipo de conteúdo.</p>
+
+    <h2>Tags de separação de conteúdo</h2>
+    <p>São as tags que organizam o documento de forma <b>lógica</b>. Cada uma tem um papel definido na documentação (MDN). Resumo:</p>
+
+    <ul>
+        <li><b><code>address</code></b> — Informações de contato: endereço, e-mail, telefone do autor ou da empresa. Costuma aparecer no final da página ou dentro de <code>article</code>. Você pode colocar links dentro.</li>
+
+        <li><b><code>article</code></b> — Conteúdo independente: post de blog, comentário, produto em um catálogo. Pode ser <b>repetido</b> na mesma página (vários artigos, vários produtos).</li>
+
+        <li><b><code>aside</code></b> — Conteúdo tangencial ao principal: como aquela “caixinha” ao lado do texto em uma revista. Pode ser barra lateral, glossário, links relacionados. Também pode ser usado para “sidebar” (por exemplo, com <code>nav</code> e <code>footer</code> dentro). Pode se repetir.</li>
+
+        <li><b><code>footer</code></b> — Rodapé. Pode haver <b>vários</b> na página: rodapé do <code>article</code>, do <code>aside</code>, da <code>section</code> ou do <code>body</code>. O <code>footer</code> está sempre ligado ao seu <b>ancestral de seção mais próximo</b> (article, aside, section, body). O rodapé do site inteiro costuma ser o <code>footer</code> que está direto no <code>body</code>.</li>
+
+        <li><b><code>header</code></b> — Grupo introdutório ou de navegação: logo, título (geralmente um <code>h1</code>), formulário de busca, menu. Pode se repetir (por exemplo, um header no topo da página e outro dentro de um <code>article</code>).</li>
+
+        <li><b><code>main</code></b> — Conteúdo <b>principal</b> da página. Só pode existir <b>um</b> <code>main</code> por página. E o <code>main</code> <b>não pode</b> ser filho de <code>article</code>, <code>aside</code>, <code>footer</code>, <code>header</code> ou <code>nav</code> — ele fica no nível do <code>body</code>.</li>
+
+        <li><b><code>nav</code></b> — Seção de <b>navegação</b> (links para outras páginas ou âncoras). Costuma andar junto de <code>aside</code> quando a navegação fica na barra lateral. Dentro do <code>nav</code> é comum usar lista (<code>ul</code> + <code>li</code>) com links (<code>a</code>).</li>
+
+        <li><b><code>section</code></b> — Seção <b>genérica</b> do documento. Use quando não houver um elemento mais específico (article, aside, etc.). Geralmente tem um <b>título</b> (h1–h6). Quando não existe tag semântica para aquela parte, você pode usar <code>section</code> ou <code>div</code>; <code>section</code> é mais moderno e semântico.</li>
+    </ul>
+
+    <h2>Validação do HTML</h2>
+    <p>O validador (ex.: validator.w3.org) avisa quando <code>article</code> ou <code>section</code> não têm um <b>heading</b> (h1 a h6) dentro. É boa prática colocar pelo menos um título em cada artigo e em cada seção — por exemplo, o nome do produto como <code>h2</code> ou <code>h3</code> dentro do <code>article</code>. Assim o documento fica mais claro para leitores de tela e buscadores.</p>
+
+    <h2>Exemplo de estrutura</h2>
+    <p>Um esboço possível:</p>
+    <pre><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;a href="/"&gt;Logo&lt;/a&gt;
+    &lt;h1&gt;Nome do site&lt;/h1&gt;
+    &lt;p&gt;Descrição ou subtítulo&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Roupas femininas&lt;/h2&gt;
+      &lt;article&gt;&lt;h3&gt;Produto 1&lt;/h3&gt;...&lt;/article&gt;
+      &lt;article&gt;&lt;h3&gt;Produto 2&lt;/h3&gt;...&lt;/article&gt;
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Roupas masculinas&lt;/h2&gt;
+      &lt;article&gt;...&lt;/article&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;aside&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/aside&gt;
+
+  &lt;footer&gt;
+    &lt;address&gt;Contato, endereço, telefone&lt;/address&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+    <p>Dentro de <code>header</code> ou <code>section</code> você pode usar <code>div</code> quando precisar de uma “caixa” só para alinhar ou estilizar com CSS — isso não quebra a semântica. O importante é fechar as tags na ordem correta e manter <code>main</code> único e fora de article/section.</p>
+
+    <h2>Section vs div</h2>
+    <p>Quando não há um elemento semântico que descreva aquela parte do site (não é artigo, não é navegação, não é rodapé, etc.), use <code>section</code> (seção com título) ou <code>div</code> (container genérico). <code>section</code> é mais indicado quando aquele bloco representa uma “seção” do conteúdo; <code>div</code> continua válido para agrupar sem significado específico.</p>
+
+    <h2>Acessibilidade e leitores de tela</h2>
+    <p>Ferramentas como o <b>Chrome Vox</b> (extensão) ou o painel de <b>Accessibility</b> no DevTools leem a estrutura do documento. Elas anunciam “banner” (header), “navegação”, “lista com X itens”, “seção”, “cabeçalho nível 2”, “artigo”, etc. Quem usa leitor de tela entende a página com base nessa <b>semântica</b> — por isso usar <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code> corretamente ajuda na inclusão e na acessibilidade.</p>
+
+    <div class="dica">
+        <strong>Boas práticas:</strong> Sempre que possível use as tags semânticas em vez de só <code>div</code>. Valide o HTML (validator.w3.org) para garantir que não há erros e que article/section tenham headings quando fizer sentido. Isso beneficia buscadores (SEO) e usuários com deficiência visual. Depois vamos misturar CSS ao HTML para dar visual ao que está estruturado.
+    </div>
+
+    <h2>Resumo rápido</h2>
+    <ul>
+        <li>Antes do HTML5: estrutura só com div (e tabelas); sem semântica.</li>
+        <li>HTML5: tags de separação — address, article, aside, footer, header, main, nav, section.</li>
+        <li><code>main</code>: um por página; não pode ser filho de article, section, etc.</li>
+        <li><code>footer</code> e <code>header</code>: podem se repetir; ligados ao ancestral de seção mais próximo.</li>
+        <li><code>article</code> e <code>section</code>: preferir com heading (h1–h6) dentro; validador avisa se faltar.</li>
+        <li><code>section</code> = seção genérica com título; <code>div</code> = container genérico.</li>
+        <li>Leitores de tela usam a semântica para anunciar as partes da página.</li>
+        <li>Validar o documento e usar elementos semânticos quando fizer sentido.</li>
+    </ul>
+
+</body>
+</html>
