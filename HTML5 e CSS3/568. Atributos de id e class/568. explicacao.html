@@ -1,0 +1,156 @@
+<!--
+
+ESTUDOS: ATRIBUTOS DE ID E CLASS
+
+    POR QUE NÃO DEIXAR CÓDIGO PARA COPIAR:
+        Para você digitar tudo no curso e sentir como é fazer o código.
+
+    ANATOMIA DA TAG:
+        Abertura → conteúdo dentro → fechamento. Hierarquia: não fechar o pai antes dos filhos.
+
+    ATRIBUTOS HTML:
+        Podem ter valor (entre aspas, recomendável) ou ser booleanos (sem valor).
+
+    ID:
+        Identificador único na página. Não pode repetir o mesmo id em duas tags.
+
+    CLASS:
+        Identificador que pode se repetir. Um elemento pode ter várias classes (separadas por espaço).
+
+    PADRÃO DE NOMENCLATURA:
+        Traço entre palavras (cabeçalho-um), sem acento. Convenção muito comum na internet.
+
+    SELETORES CSS:
+        Por tag: h1 { }
+        Por id: #cabecalho-um { }
+        Por class: .fundo-vermelho { }
+
+    ESPECIFICIDADE:
+        Mesma especificidade = o que vem por último prevalece. id tem mais força que class.
+
+    RECOMENDAÇÃO:
+        Preferir classes quando for selecionar vários elementos. Usar id só para elemento muito específico.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos HTML - Atributos de id e class</title>
+    <style>
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; 
+            max-width: 900px;
+            margin: 0 auto; 
+            padding: 20px; 
+            color: #2c3e50;
+        }
+
+        h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; color: #2980b9; }
+        h2 { margin-top: 30px; color: #2c3e50; background: #ecf0f1; padding: 5px 10px; border-radius: 5px; }
+
+        code { 
+            background-color: #f8f9fa; 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            font-family: 'Consolas', monospace; 
+            color: #e83e8c; 
+            border: 1px solid #dee2e6;
+        }
+
+        ul { list-style-type: none; padding-left: 20px; }
+        li { margin-bottom: 15px; }
+
+        .sub-lista { margin-left: 20px; border-left: 2px dashed #bdc3c7; padding-left: 15px; margin-top: 10px; }
+        .dica { background: #fff3cd; padding: 10px; border-left: 5px solid #ffc107; margin-top: 20px; }
+
+        .btn-voltar {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .btn-voltar:hover {
+            background: #219a52;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="Index.html">
+        <button type="button" class="btn-voltar">O que foi feito</button>
+    </a>
+
+    <h1>Atributos de id e class</h1>
+
+    <h2>Por que digitar (e não copiar) o código</h2>
+    <p>Muita gente reclama de não deixar o código de algumas sessões para copiar. O motivo é simples: não queremos que você copie e cole no editor sem fazer nada. Você precisa <b>trabalhar</b> no curso — digitar tudo o que está sendo mostrado, testar e sentir como é fazer o código. Por isso, digite tudo no seu computador.</p>
+
+    <h2>Anatomia da tag</h2>
+    <p>Uma tag tem <b>abertura</b>, <b>conteúdo dentro</b> e <b>fechamento</b>. Tudo o que você colocar dentro da tag fica “dentro” dela. Lembre-se: você <b>não pode</b> fechar a tag “por fora” do conteúdo — por exemplo, não pode fechar o <code>&lsaquo;h1&rsaquo;</code> antes de terminar o texto que é filho dele, senão o navegador não entende direito e o layout quebra.</p>
+    <p>Se existe <b>hierarquia</b> (ex.: <code>&lsaquo;body&rsaquo;</code> tem filhos como <code>&lsaquo;h1&rsaquo;</code>), você não pode fechar o pai antes de fechar o filho. Fechar o <code>&lsaquo;body&rsaquo;</code> antes do <code>&lsaquo;h1&rsaquo;</code> está incorreto. É muito importante <b>sempre fechar na ordem correta</b>. Algumas tags não têm corpo; outras têm — as que têm corpo precisam ser fechadas.</p>
+
+    <h2>Atributos em HTML</h2>
+    <p>Em HTML podemos ter <b>atributos</b>: alguns com <b>valor</b> (recomendável colocar entre aspas) e alguns sem valor (o navegador trata como booleano <em>true</em>). Os mais famosos são o <b>id</b> e a <b>class</b>, que ficam na <b>abertura</b> da tag.</p>
+
+    <h2>Atributo <code>id</code></h2>
+    <p>O <b>id</b> é um <b>identificador único</b> daquele elemento. Você não pode ter duas tags na mesma página com o mesmo <code>id</code>. O valor deve ser único (ex.: <code>cabecalho-um</code>, <code>cabecalho-dois</code>). Quando for colocar o valor, use aspas (recomendável).</p>
+    <ul>
+        <li>Um único <code>id</code> por página para cada valor.</li>
+        <li>Exemplo: <code>&lsaquo;h1 id="cabecalho-um"&rsaquo;</code> e <code>&lsaquo;h1 id="cabecalho-dois"&rsaquo;</code>.</li>
+    </ul>
+
+    <h2>Padrão de nomenclatura (id e class)</h2>
+    <p>Um padrão muito comum na internet é usar <b>traço</b> entre palavras e <b>sem acento</b>: <code>cabecalho-um</code>, <code>cabecalho-dois</code>, <code>fundo-vermelho</code>. Você pode usar como preferir (ex.: <code>cabecalho1</code>), mas esse padrão com traço é o que costumamos seguir. Se for uma palavra só, pode ser só a palavra (ex.: <code>cabecalho</code>).</p>
+
+    <h2>Atributo <code>class</code></h2>
+    <p>A <b>class</b> também é um identificador de elementos, mas <b>diferente do id</b>: as classes <b>podem se repetir</b>. Você pode ter vários elementos com a mesma classe e um mesmo elemento pode ter <b>mais de uma classe</b> (separadas por espaço).</p>
+    <ul>
+        <li>Exemplo: <code>class="fundo-vermelho"</code> em vários <code>&lsaquo;h1&rsaquo;</code>.</li>
+        <li>Várias classes no mesmo elemento: <code>class="fundo-vermelho borda-esquerda"</code>.</li>
+        <li>Resumo: <b>id</b> = único na página; <b>class</b> = pode repetir e um elemento pode ter várias.</li>
+    </ul>
+
+    <h2>Tag <code>&lsaquo;style&rsaquo;</code> e CSS</h2>
+    <p>A tag <code>&lsaquo;style&rsaquo;</code> geralmente fica dentro do <code>&lsaquo;head&rsaquo;</code>. Dentro dela colocamos o <b>CSS</b>. Precisamos de CSS para “fazer algo” com o HTML; senão fica só estrutura. Aqui vemos um básico de CSS; em outra seção dá para aprofundar.</p>
+
+    <h2>Seletores CSS</h2>
+    <p>Para aplicar estilo a um elemento, precisamos <b>selecioná-lo</b>. No CSS:</p>
+    <ul>
+        <li><b>Por nome da tag:</b> <code>h1 { }</code> — seleciona todas as tags <code>&lsaquo;h1&rsaquo;</code>. O que você colocar dentro das chaves vale para todos.</li>
+        <li><b>Por id:</b> <code>#cabecalho-dois { }</code> — seleciona o elemento cujo <code>id</code> é <code>cabecalho-dois</code>. O <code>#</code> é o nome do id. Ex.: <code>#cabecalho-dois { background: purple; }</code>.</li>
+        <li><b>Por class:</b> <code>.fundo-vermelho { }</code> — seleciona todos os elementos que têm a classe <code>fundo-vermelho</code>. O <code>.</code> (ponto) é o nome da classe. Ex.: <code>.fundo-vermelho { background: brown; }</code>. Todos com essa classe recebem o estilo.</li>
+    </ul>
+    <p>Exemplos práticos: selecionar <code>h1</code> e dar <code>background: red;</code> — todos os <code>h1</code> ficam com fundo vermelho. Selecionar <code>p</code> e dar <code>background: blue;</code> — todos os parágrafos ficam com fundo azul. Isso não afeta outras tags. Para um elemento específico, use o <code>id</code>; para vários, use <code>class</code>.</p>
+
+    <h2>Especificidade</h2>
+    <p>O CSS tem <b>especificidade</b>: a “força” do seletor. Se duas regras tiverem a <b>mesma especificidade</b> (ex.: duas com seletor <code>h1</code>), o que prevalece é o que o navegador <b>lê por último</b>. O seletor por <b>id</b> tem mais força que o por <b>class</b>. Por isso, se você colocar estilo em um elemento por <code>id</code>, fica mais difícil sobrescrever depois só com classe — a não ser que use recursos mais avançados (que não são recomendáveis forçar com <code>!important</code> em tudo).</p>
+
+    <div class="dica">
+        <strong>Recomendação:</strong> Prefira <b>classes</b> quando quiser selecionar vários elementos (ex.: todos os títulos com fundo marrom). Use <b>id</b> só quando precisar de um elemento muito específico (ex.: um único cabeçalho com fundo roxo). Assim você evita conflitos de especificidade e mantém o código mais fácil de manter.
+    </div>
+
+    <h2>Resumo rápido</h2>
+    <ul>
+        <li>Digite o código, não só copie — para praticar e fixar.</li>
+        <li>Anatomia da tag: abrir → conteúdo (e filhos) → fechar na ordem correta.</li>
+        <li><b>id</b>: identificador único na página; no CSS use <code>#nome-do-id</code>.</li>
+        <li><b>class</b>: pode repetir e um elemento pode ter várias; no CSS use <code>.nome-da-classe</code>.</li>
+        <li>Padrão comum: traço entre palavras, sem acento (ex.: <code>cabecalho-um</code>).</li>
+        <li>Seletores: por tag (<code>h1</code>), por id (<code>#id</code>), por class (<code>.class</code>).</li>
+        <li>Especificidade: mesmo nível = último vence; id tem mais força que class.</li>
+        <li>Preferir classes para vários elementos; id para elemento único quando necessário.</li>
+    </ul>
+
+</body>
+</html>
