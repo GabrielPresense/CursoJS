@@ -1,0 +1,118 @@
+<!--
+
+ESTUDOS: ANATOMIA E ESTRUTURA DO HTML5
+
+    SINTAXE DAS TAGS:
+
+        Tag com corpo: (tag) Conteúdo (/tag)
+
+        Tag sem corpo: (br) ou (br/)
+
+        Tag com atributo: (tag atributo="valor")
+
+    HIERARQUIA (DOM):
+
+        Tags devem ser fechadas na ordem inversa da abertura.
+
+        Indentação: Espaços usados para mostrar quem é "filho" de quem.
+
+    COMPONENTES DA ESTRUTURA:
+
+        (!DOCTYPE html) -> Informa ao navegador que o documento segue o padrão HTML5.
+
+        (html lang="pt-BR") -> Tag raiz que engloba todo o site. "lang" define o idioma.
+
+        (head) -> Cabeçalho técnico (Metadados). Não aparece na área visual.
+
+        (meta charset="UTF-8"): Evita erro em acentos/emojis.
+
+        (meta name="viewport" content="width=device-width, 1.0"): Responsividade para celulares.
+
+        (title): Nome na aba do navegador.
+
+        (body) -> Tudo o que é visível ao usuário fica aqui.
+
+        (p): Tag para parágrafos.
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos HTML - Estrutura Básica</title>
+</head>
+<body>
+
+    <h1>Anatomia e Estrutura do HTML</h1>
+
+    
+
+    <h2>Tags e Sintaxe</h2>
+    <ul>
+        <li>
+            <b>Tag com corpo</b> &rarr; <code>&lsaquo;escreve&rsaquo;</code> Conteúdo <code>&lsaquo;/escreve&rsaquo;</code><br>
+            Abertura da Tag <code>&lsaquo; &rsaquo;</code> &rarr; Fechamento da Tag <code>&lsaquo;/&rsaquo;</code>.
+        </li>
+        <li>
+            <b>Tag sem corpo (Self-closing)</b> &rarr; <code>&lsaquo;br&rsaquo;</code> ou <code>&lsaquo;br /&rsaquo;</code><br>
+            Utilizadas para elementos que não envolvem conteúdo, como quebras de linha ou imagens.
+        </li>
+        <li>
+            <b>Tag com atributo</b> &rarr; <code>&lsaquo;tag atributo="valor"&rsaquo;</code><br>
+            Exemplo: <code>&lsaquo;escreve atributo="&amp;larr"&rsaquo;</code>. Atributos fornecem informações extras para a tag.
+        </li>
+    </ul>
+
+    <h2>Estrutura Básica</h2>
+    <p>No editor (como VS Code), utilizamos o atalho <b>"!"</b> para gerar a estrutura inicial do HTML5 automaticamente.</p>
+
+    <ul>
+        <li>
+            <b><code>&lsaquo;!DOCTYPE html&rsaquo;</code></b> &rarr; Informa para o navegador que este é um documento <b>HTML5</b>.
+        </li>
+
+        <li>
+            <b><code>&lsaquo;html lang="pt-BR"&rsaquo;</code></b> &rarr; Tag <b>Raiz</b>. Tudo o que faz parte do site deve estar dentro dela.<br>
+            O atributo <code>lang="pt-BR"</code> informa que o conteúdo principal está em português do Brasil.
+            
+            <div class="sub-lista">
+                <li>
+                    <b><code>&lsaquo;head&rsaquo;</code></b> &rarr; Local onde ficam os <b>Metadados</b> (configurações e informações do site).
+                    <ul class="sub-lista">
+                        <li>
+                            <code>&lsaquo;meta charset="UTF-8"&rsaquo;</code> &rarr; Garante que acentuações (á, õ, ç) e caracteres especiais apareçam corretamente.
+                        </li>
+                        <li>
+                            <code>&lsaquo;meta name="viewport" content="width=device-width, initial-scale=1.0"&rsaquo;</code> &rarr; Essencial para <b>Responsividade</b> (ajusta o site no celular).
+                        </li>
+                        <li>
+                            <code>&lsaquo;title&rsaquo;</code> Document <code>&lsaquo;/title&rsaquo;</code> &rarr; Define o título que aparece na aba do navegador.
+                        </li>
+                    </ul>
+                    <b><code>&lsaquo;/head&rsaquo;</code></b> &rarr; Fechamento das configurações.
+                </li>
+
+                <li style="margin-top: 20px;">
+                    <b><code>&lsaquo;body&rsaquo;</code></b> &rarr; O "Corpo" do site. Tudo o que for digitado aqui aparecerá para o usuário final.
+                    <ul class="sub-lista">
+                        <li><code>&lsaquo;p&rsaquo;</code> &rarr; Tag usada para criar parágrafos de texto.</li>
+                    </ul>
+                    <b><code>&lsaquo;/body&rsaquo;</code></b> &rarr; Fechamento do conteúdo visível.
+                </li>
+            </div>
+        </li>
+
+        <li><b><code>&lsaquo;/html&rsaquo;</code></b> &rarr; Fechamento total do documento.</li>
+    </ul>
+
+    <div class="dica">
+        <strong>Dica de Hierarquia:</strong> O HTML funciona como uma árvore (DOM). Uma tag deve ser fechada antes da tag "pai" que a envolve. 
+        <br><i>Exemplo:</i> O <code>&lsaquo;title&rsaquo;</code> deve fechar antes do <code>&lsaquo;/head&rsaquo;</code>.
+    </div>
+
+</body>
+</html>
