@@ -1,0 +1,88 @@
+<!--
+
+ESTUDOS: ESTRUTURA DO HTML E META VIEWPORT
+
+    ATALHO NO VS CODE:
+        Colocar "!" (exclamação) gera a estrutura completa do documento HTML automaticamente.
+
+    HTML É CASE INSENSITIVE:
+        Tanto faz usar letra maiúscula ou minúscula nas tags.
+
+    META VIEWPORT:
+        Aparece quando o Emmet/VS Code gera o documento.
+        Não faz parte da especificação oficial do HTML, foi introduzida pela Apple no Safari.
+        Todos os navegadores aceitam. Serve para dispositivos móveis.
+
+    TAGS COM CORPO vs SEM CORPO:
+        Com corpo: h1, p — precisam de abertura, conteúdo e fechamento.
+        Sem corpo: br (quebra de linha) — não precisa fechar; estilo "inline".
+
+    HIERARQUIA:
+        Abrir tag → colocar conteúdo/filhos → fechar na ordem inversa.
+        Não pode fechar o body antes do p, por exemplo.
+
+    VIEWPORT EM CELULAR:
+        Navegadores móveis usam uma "janela virtual" (viewport) para renderizar.
+        Sem a meta viewport, essa janela pode ser maior que a tela → usuário precisa arrastar.
+        Com meta viewport (width=device-width), a página se ajusta à largura da tela do dispositivo.
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos HTML - Estrutura e Meta ViewPort</title>
+</head>
+<body>
+
+    <h1>Estrutura do HTML e Meta ViewPort</h1>
+
+    <h2>Atalho no editor (VS Code)</h2>
+        <p>Você não precisa criar toda a estrutura manualmente toda vez. Se estiver usando o VS Code com a extensão que foi sugerida, basta digitar <b>uma exclamação</b> <code>!</code> e apertar Enter — o editor já gera o documento HTML com a mesma estrutura que vimos anteriormente.</p>
+        <p>O Emmet pode colocar o título em inglês (<code>Document</code>). Vale corrigir para <code>lang="pt-BR"</code> no <code>&lsaquo;html&rsaquo;</code> e colocar um título como "Meu HTML" (ou o que você quiser) na tag <code>&lsaquo;title&rsaquo;</code>.</p>
+
+    <h2>HTML é case insensitive</h2>
+        <p>Uma coisa importante: o <b>HTML é case insensitive</b>. Não faz diferença você usar letra maiúscula ou minúscula nas tags. Tanto faz.</p>
+
+    <h2>Tags com corpo: h1 e p</h2>
+        <p>As tags <code>&lsaquo;h1&rsaquo;</code> e <code>&lsaquo;p&rsaquo;</code> andam quase que juntas: <b>h1</b> é um título, <b>p</b> significa parágrafo. Sempre que estamos escrevendo HTML precisamos de algum "place holder" para ver algo na página.</p>
+            <ul>
+                <li><b>Tag com corpo</b> &rarr; você abre a tag, coloca o conteúdo (e eventualmente outras tags dentro), e <b>fecha</b> a tag. Ex.: <code>&lsaquo;p&rsaquo;</code> texto <code>&lsaquo;/p&rsaquo;</code>.</li>
+                <li>Se você quebrar a linha no código, o texto continua dentro do parágrafo no navegador. O que importa é que a tag com corpo seja fechada.</li>
+                <li>Regra: <b>abrir tag → colocar o conteúdo (e filhos) → fechar a tag</b>. Não pode fechar o <code>&lsaquo;body&rsaquo;</code> antes de fechar o <code>&lsaquo;p&rsaquo;</code> ou o <code>&lsaquo;h1&rsaquo;</code>, senão o código fica incorreto.</li>
+            </ul>
+
+    <h2>Tags sem corpo (ex.: br)</h2>
+        <p>Existem tags que <b>não têm corpo</b>. Exemplo: <code>&lsaquo;br&rsaquo;</code> (quebra de linha). Visualmente não tem "estilo" grande no corpo; ela é <b>inline</b> — o efeito dela é só aplicado no texto, não atrapalha outras coisas ao lado.</p>
+        <p>Como a tag <code>&lsaquo;br&rsaquo;</code> não tem corpo, você não precisa fechar ela. Vários <code>&lsaquo;br&rsaquo;</code> seguidos significam várias quebras de linha. Ex.: "Luiz Otávio" <code>&lsaquo;br&rsaquo;</code> "em Salvador" — cada parte fica em uma linha. Se tirar o <code>&lsaquo;br&rsaquo;</code>, o texto fica na mesma linha.</p>
+
+    <h2>Meta viewport — para quê serve?</h2>
+        <p>Quando o Emmet gera o documento, ele coloca uma tag a mais: a <b>meta viewport</b>. Não existe na documentação oficial do HTML; foi introduzida pela Apple no Safari. Não faz diferença para a "história" da especificação, mas todos os navegadores conhecidos aceitam. Ela é mais avançada do que a gente precisa neste momento, mas é importante saber para quê serve.</p>
+            <ul>
+                <li><b>Problema em celular:</b> os navegadores para celular usam uma <b>janela virtual</b> chamada <b>viewport</b> para renderizar a página. Essa janela pode ser <b>maior</b> que a tela do dispositivo (por exemplo, mais larga).</li>
+                <li>Resultado: sem a meta viewport, você tem que <b>arrastar</b> a página para o lado para ver o conteúdo — a página foi renderizada em um viewport maior que a tela.</li>
+                <li><b>Solução:</b> a Apple introduziu a meta tag <code>viewport</code>. Com <code>content="width=device-width"</code> (e <code>initial-scale=1.0</code>), estamos dizendo que a largura do viewport deve ser a <b>mesma da tela do dispositivo</b>. Assim, a janela virtual se encaixa no tamanho da tela e não precisamos ficar arrastando.</li>
+            </ul>
+        <p>Resumindo: essa tag está aí para <b>dispositivos móveis</b>. Com ela, o site se ajusta ao tamanho da tela do telefone.</p>
+
+        <div class="dica">
+            <strong>Dica:</strong> No Chrome você pode simular um dispositivo móvel (F12 → ícone de celular / "Toggle device toolbar"). Se tirar a meta viewport e atualizar, a página pode ser renderizada de um jeito que obriga a arrastar. Colocando a tag de volta e atualizando, ela se ajusta à largura da tela.
+        </div>
+
+    <h2>Resumo rápido</h2>
+        <ul>
+            <li>Use <b>!</b> no VS Code para gerar a estrutura do HTML.</li>
+            <li>Corrija o idioma para <code>lang="pt-BR"</code> e o título em <code>&lsaquo;title&rsaquo;</code> (ex.: "Meu HTML").</li>
+            <li>HTML é case insensitive.</li>
+            <li>Tags com corpo (h1, p): abrir → conteúdo → fechar. Tags sem corpo (br): não precisam fechar.</li>
+            <li>Meta viewport: faz a página se ajustar à largura da tela em dispositivos móveis.</li>
+        </ul>
+
+        <div class="dica">
+            <strong>Recomendação:</strong> Crie um arquivo por aula. Coloque um parágrafo, digite tudo que está sendo mostrado para entender e fixar. Se tiver dúvida, use as perguntas e respostas do curso.
+        </div>
+
+</body>
+</html>
