@@ -1,0 +1,23 @@
+/*
+Especificidade
+Empate
+Style
+!important ****
+
+Style   ID  Classes, atributos e pseudo-classes     Elementos e pseudo-elementos
+1       1   0                                       0
+0       0   1                                       0
+0       1   1                                       0
+*/
+
+body#b p#p.p::selection {
+    background: purple;
+}
+
+#p {
+    background: red;
+}
+
+#p.p {
+    background: yellow;
+}
