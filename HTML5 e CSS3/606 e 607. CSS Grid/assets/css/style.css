@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: sans-ser;
+    font-size: 40px;
+}
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.grid div {
+    background: tomato;
+    min-height: 100px;
+}
+
+
+
+@media (max-width: 768px) {
+    .grid div:nth-child(5) {
+        grid-row: span 1;
+}
+}
