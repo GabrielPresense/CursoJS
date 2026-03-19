@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emmet Cheat Sheet</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }
+    h1, h2 { margin-top: 1.4rem; }
+    code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+    .cheatsheet { max-width: 900px; }
+    table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background: #f0f0f0; text-align: left; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* estilo do campo de busca */
+    #pesquisa {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 16px;
+      margin: 16px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .section { margin-bottom: 2rem; }
+    .hidden { display: none !important; }
+    .pdf-embed { width: 100%; height: 800px; border: 1px solid #ccc; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <main class="cheatsheet">
+    <h1>Emmet Cheat Sheet</h1>
+    <p>Esta página reúne as informações essenciais do <a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener">Emmet Cheat Sheet</a> para uso rápido no VS Code.</p>
+
+    <!-- campo de busca -->
+    <input id="pesquisa" type="search" placeholder="Procure algo específico..." />
+
+    <!-- PDF embarcado (mostra todo o conteúdo do PDF na página) -->
+    <section class="section">
+      <h2>Cheatsheet completo (PDF)</h2>
+      <object class="pdf-embed" data="cheatsheet-a5.pdf" type="application/pdf">
+        <p>Se o PDF não carregar, você pode abrir diretamente: <a href="cheatsheet-a5.pdf" target="_blank">cheatsheet-a5.pdf</a></p>
+      </object>
+    </section>
+
+    <section class="section">
+      <h2>1. Tags básicas</h2>
+      <table>
+        <thead>
+          <tr><th>Abreviação</th><th>Expande para</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>div</code></td><td><code>&lt;div&gt;&lt;/div&gt;</code></td></tr>
+          <tr><td><code>p</code></td><td><code>&lt;p&gt;&lt;/p&gt;</code></td></tr>
+          <tr><td><code>span</code></td><td><code>&lt;span&gt;&lt;/span&gt;</code></td></tr>
+          <tr><td><code>ul&gt;li*3</code></td><td><code>&lt;ul&gt;<br>&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br>&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br>&lt;/ul&gt;</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>2. IDs e classes</h2>
+      <table>
+        <thead>
+          <tr><th>Abreviação</th><th>Expande para</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>header#top</code></td><td><code>&lt;header id="top"&gt;&lt;/header&gt;</code></td></tr>
+          <tr><td><code>section.content</code></td><td><code>&lt;section class="content"&gt;&lt;/section&gt;</code></td></tr>
+          <tr><td><code>div#app.container</code></td><td><code>&lt;div id="app" class="container"&gt;&lt;/div&gt;</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>3. Hierarquia / Aninhamento</h2>
+      <table>
+        <thead>
+          <tr><th>Abreviação</th><th>Expansão</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>nav&gt;ul&gt;li*4&gt;a</code></td><td>um <code>&lt;nav&gt;</code> com uma lista de 4 links</td></tr>
+          <tr><td><code>header&gt;h1+p</code></td><td>um <code>&lt;header&gt;</code> com título e parágrafo</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>4. Irmãos (siblings)</h2>
+      <table>
+        <thead>
+          <tr><th>Abreviação</th><th>Expansão</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>h1+h2+h3</code></td><td>três tags em sequência</td></tr>
+          <tr><td><code>div+p+img</code></td><td>uma <code>div</code>, um <code>p</code> e uma <code>img</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>5. Repetição, contadores e atributos</h2>
+      <table>
+        <thead>
+          <tr><th>Abreviação</th><th>Expansão</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>li.item$*5</code></td><td>5 itens com classes <code>item1</code> a <code>item5</code></td></tr>
+          <tr><td><code>a[href="#"]</code></td><td><code>&lt;a href="#"&gt;&lt;/a&gt;</code></td></tr>
+          <tr><td><code>img:src</code></td><td>expande para <code>&lt;img src=""&gt;</code> (dependendo do editor)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>6. Texto padrão</h2>
+      <table>
+        <thead>
+          <tr><th>Abreviação</th><th>Resultado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>lorem</code></td><td>Gera texto Lorem ipsum</td></tr>
+          <tr><td><code>lorem20</code></td><td>Gera 20 palavras de Lorem ipsum</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Dicas rápidas</h2>
+      <ul>
+        <li>No VS Code, pressione <code>Tab</code> após digitar a abreviação (ou <code>Ctrl+E</code> / <code>Ctrl+Alt+Enter</code> dependendo da configuração).</li>
+        <li>Use <code>^</code> para voltar ao elemento pai (ex: <code>div>ul>li^p</code> gera <code>&lt;p&gt;</code> como irmão de <code>div</code>).</li>
+        <li>Combine com snippets do VS Code para acelerar ainda mais.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <p>Para o cheat sheet completo, acesse: <a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener">https://docs.emmet.io/cheat-sheet/</a></p>
+    </section>
+  </main>
+
+  <script>
+    const pesquisa = document.getElementById('pesquisa');
+    const secoes = Array.from(document.querySelectorAll('.section'));
+
+    pesquisa.addEventListener('input', () => {
+      const termo = pesquisa.value.trim().toLowerCase();
+      if (!termo) {
+        secoes.forEach(sec => sec.classList.remove('hidden'));
+        return;
+      }
+
+      secoes.forEach(sec => {
+        const texto = sec.innerText.toLowerCase();
+        sec.classList.toggle('hidden', !texto.includes(termo));
+      });
+    });
+  </script>
+</body>
+</html>
